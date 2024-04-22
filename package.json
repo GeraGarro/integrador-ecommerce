@@ -1,0 +1,17 @@
+{
+  "name": "pageinterador",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "nodemon src/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "node-google-translate-skidz": "^1.1.2"
+  }
+}
