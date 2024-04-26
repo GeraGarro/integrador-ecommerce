@@ -1,9 +1,9 @@
 {
   "name": "pageinterador",
   "version": "1.0.0",
-  "main": "src/app.js",
+  "main": "./app.js",
   "scripts": {
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon ./app.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +12,13 @@
     "nodemon": "^3.1.0"
   },
   "dependencies": {
-    "node-google-translate-skidz": "^1.1.2"
+    "axios": "^1.6.8",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "env-var": "^7.4.1",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "node-google-translate-skidz": "^1.1.2",
+    "request": "^2.88.2"
   }
 }

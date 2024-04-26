@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-image: url(assets/backgroundHome.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+header{
+    width: 100%;
+   
+  position:fixed ;
+  z-index: 999;
+   justify-content: space-between;
+    align-items: center;
+   display: flex;
+    background: black;
+    color: #d1d1d1;
+    height: 50px;
+    text-align: center;
+    margin-bottom: 25px;
+    
+}
+.header{
+    display: flex;
+    height: 100%;
+    animation-name: desplazamientoHorizontal;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    margin-left: 70px;
+}
+.header > p{
+    font-size: 30px;
+    color: burlywood;
+    font-family: "Jersey 25", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+   
+}
+
+@keyframes desplazamientoHorizontal {
+    0%{
+        transform: translateX(-140px);
+        transform: scale(1.15);
+        
+    }
+    50%{
+        transform: translateX(-80px);
+       
+        
+    }
+
+    100%{
+        transform: translateX(0px);
+    }
+}
+p>span{
+    border-radius: 80%;
+    padding: 10px;
+    background-color: rgb(189, 35, 15);
+}
+#icon-oferta{
+    justify-content: end;
+   margin-left: 10px;
+    width: 50px;
+}
+
+#btn-carrito{
+    align-self: start;
+      
+      margin-right: 15px;
+    background-color: black;
+      border: none;
+      height: 60%;
+      
+      cursor: pointer;
+  }
+  #btn-carrito > a > img{
+      width: 40px;
+      border-radius: 50%;
+      padding: 5px;
+      background-color: rgb(212, 160, 17);
+  }
+
+
+  main{
+    
+    position: absolute; 
+    display: flex;
+    flex-direction: column;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: rgb(95, 131, 161);
+    width: 75vw;
+    min-height: 30vh;
+    border-radius: 5px;
+    padding: 15px;
+  }
+  .itemLista{
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, .7);
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .itemLista >*{
+    padding: 10px;
+  }
+ .imagen{
+    width: 100px;
+ }
+ .titulo .precio{
+
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+ }
+ .titulo{
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.774);
+    background-color: black;
+    border-radius: 20px;
+    width: 30%;
+    
+ }
+ .precio , .precio-total{
+    margin: 5px;
+  
+    color: aliceblue;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.356);
+    
+ }
+
+ 
+ .precio::before{
+    content: "$";
+ }
+  .precio::after{
+    font-size: 80%;
+    content: " por uni";
+    
+    
+ } 
+
+ .cantidad{
+    width: 5%;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0 15px;
+    border: 2px solid black;
+ }
+
+ .precio-total{
+    background-color: darkorange;
+    font-size: 20px;
+ }
+  @media screen and (width<1000px) {
+   
+    .header{
+        align-items: center;
+    }
+    .header > p{
+        font-size: 20px;
+        color: burlywood;
+      
+       
+    }
+    #btn-carrito >a > img{
+        width: 35px;
+    }
+    #icon-oferta{
+       
+        width: 35px;
+    }
+    }
