@@ -152,7 +152,44 @@ app.get('/carrito', async (req, res) => {
     res.status(500).json({ mensaje: 'Error al obtener elementos del carrito' });
   }
 });
+app.post('/compra', (req, res) => {
+  try {
+      const detallesCompra = req.body;
+      guardarDetallesCompra(detallesCompra);
+      res.status(200).json({ mensaje: 'Detalles de la compra guardados exitosamente.' });
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({ mensaje: 'Error al guardar los detalles de la compra.' });
+  }
+});
 
+function guardarDetallesCompra(detallesCompra) {
+  try {
+      const detallesJSON = JSON.stringify(detallesCompra, null, 2);
+      fs.writeFileSync('compra.json', detallesJSON);
+      console.log('Detalles de la compra guardados en compra.json:', detallesCompra);
+  } catch (error) {
+      console.error('Error al guardar los detalles de la compra:', error);
+  }
+}
+
+app.delete('/carrito/:title', async (req, res) => {
+  try {
+    const title = req.params.title;
+    const carrito = await obtenerCarrito();
+
+    // Filtrar el carrito para excluir el producto con el título proporcionado
+    const nuevoCarrito = carrito.filter(producto => producto.title !== title);
+
+    // Guardar el carrito actualizado en carrito.json
+    await guardarEnCarrito(nuevoCarrito);
+
+    res.status(200).json({ mensaje: 'Producto eliminado del carrito exitosamente.' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ mensaje: 'Error al eliminar producto del carrito.' });
+  }
+});
 
 app.listen(3000)
 

@@ -102,8 +102,14 @@ p>span{
     background-color: rgb(95, 131, 161);
     width: 75vw;
     min-height: 30vh;
+   
+
     border-radius: 5px;
     padding: 15px;
+    
+  }
+  .contenedor-principal{
+    
   }
   .itemLista{
     border-radius: 10px;
@@ -141,7 +147,16 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     
  }
 
- 
+ .totalSuma{
+    padding: 10px 5px 5px 10px;
+    font-size: 50px;
+    text-align: right;
+    border: 5px solid rgba(168, 201, 201, 0.411);
+ }
+ .totalSuma::before{
+    color: #ffffff;
+    content: "TOTAL ";
+ }
  .precio::before{
     content: "$";
  }
@@ -151,7 +166,15 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     
     
  } 
+.contenedor-compraFinal{
+    display: flex;
+    justify-content: space-around;
+}
 
+.botonComprar{
+    width: 150px;
+    font-size: 25px;
+}
  .cantidad{
     width: 5%;
     text-align: center;
@@ -164,6 +187,20 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: darkorange;
     font-size: 20px;
  }
+
+ .mensaje-exito {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Color de texto blanco */
+    padding: 15px 20px; /* Relleno interno */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    z-index: 9999; /* Z-index para asegurarse de que aparezca encima de otros elementos */
+  }
+
   @media screen and (width<1000px) {
    
     .header{
@@ -181,5 +218,9 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     #icon-oferta{
        
         width: 35px;
+    }
+    
+    .titulo{
+        font-size: 25px;
     }
     }
